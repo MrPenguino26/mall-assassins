@@ -1,6 +1,6 @@
 # Getting Started with Mall Assassins
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The backend is built on top of Firebase. This document is intended to provide you the necessary details to get the mall assassins app code on your local machine and in a state ready for you to run it, contribute your own changes to the code, and integrate those changes into the main version of the app.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The backend is built on top of Firebase. This document is intended to provide you the necessary details to get the mall assassins app code on your local machine and in a state ready for you to run it, contribute your own changes to the code, and integrate those changes into the main version of the app. 
 
 ## Setting Up Github for Collaboration
 
@@ -11,7 +11,7 @@ The first step to getting started here is to set up your Github account and set 
   
 If you are already familiar with Github and git workflows and are ready to get going, go ahead and fork this repository and then git clone the fork onto your local machine. Make some basic change to this README.md file and submit a pull request (PR) against the main branch of this current repository to prove that you know how these things work. Your PR will get rejected, and once it does, go ahead and move on to the section on setting up npm.
 </details>
-
+   
 <details>
   <summary>For Less Experienced Git Users</summary>
 First, try to get a general overview of what git and Github are - ask the person next to you what they are and why they're useful. Make sure you understand the following terms in particular:
@@ -27,6 +27,13 @@ First, try to get a general overview of what git and Github are - ask the person
 Once you feel like you have a decent grasp of these ideas, go ahead and move on to the [github-setup.md](/github-setup.md) file to actually do the setup.
 </details>
 
+After finishing the steps in the section above, make sure you also set up this repository as a remote branch so that you can pull the latest changes to the app at all times. To set this repository as a remote branch, run
+
+```git remote add upstream git@github.com:Octophi/mall-assassins.git```
+
+Then in the future, any time you want to get the latest changes from this repository, run 
+
+```git pull upstream main```
 
 ## Setting up npm 
 
@@ -101,34 +108,24 @@ That's it! You've successfully installed NVM, Node.js, and npm on your macOS usi
   <summary>Windows Users</summary>
 
 
-  
-1. **Open PowerShell**:
 
-   Search for "PowerShell" in the Windows Start menu and open it.
+1. **Download and Run the NVM Setup Script**:
 
-2. **Download and Run the NVM Setup Script**:
+   Go to https://github.com/coreybutler/nvm-windows#readme and click "Download Now" in the README. Click on the .exe file to install. Open the downloaded file to start the Setup wizard. 
 
-   In the PowerShell window, run the following command to download and execute the NVM setup script using `curl`:
-
-   ```powershell
-   iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/coreybutler/nvm/v1.1.7/nvm.ps1'))
-   ```
-
-   This command downloads the NVM setup script and executes it.
-
-3. **Follow the Installation Wizard**:
+2. **Follow the Installation Wizard**:
 
    The NVM for Windows Setup wizard will appear. Follow the on-screen instructions to complete the installation. This typically involves agreeing to the license terms, choosing an installation directory, and confirming the installation.
 
-4. **Finish the Installation**:
+3. **Finish the Installation**:
 
    After the installation is complete, you will see a confirmation screen. Click "Finish" to exit the installer.
 
-5. **Open a New PowerShell Window**:
+4. **Open a New PowerShell Window**:
 
    To start using NVM, you need to open a new PowerShell window. You can do this by searching for "PowerShell" in the Windows Start menu and opening the application.
 
-6. **Verify NVM Installation**:
+5. **Verify NVM Installation**:
 
    In the new PowerShell window, you can verify that NVM is installed by running the following command:
 
@@ -138,7 +135,7 @@ That's it! You've successfully installed NVM, Node.js, and npm on your macOS usi
 
    This should display the version of NVM that you installed.
 
-7. **Install Node.js**:
+6. **Install Node.js**:
 
    To install a specific version of Node.js, you can use NVM. For example, to install the latest LTS (Long-Term Support) version of Node.js, run:
 
@@ -178,6 +175,15 @@ Ok, you're almost ready to write code! At this point, you should have npm instal
 
 If you made it this far, congratulations, you have made it through the setup and are ready to start coding! At this point, check in with the lead of your team on what you can start working on.
 
+## Setting Up Firebase Emulator
+
+You will eventually want to write backend code, including server-side code. For this, you'll want to use Firebase Emulator to test your code locally so you don't have to deploy things directly to production and you can instantly see the effects of the changes you are doing. The setup for this is relatively minimal:
+
+1. Install Firebase CLI. ```npm install -g firebase-tools```
+2. To start the emulator, run ```firebase emulators:start```
+
+Note: You need a version of Java at least as new as Java 11 in order to run the emulator.
+
 ## Resources
 
 Below is a list of useful tutorials if you want to familiarize yourself with the technologies used in this app. 
@@ -195,4 +201,3 @@ Below is a list of useful tutorials if you want to familiarize yourself with the
 
 ### Firebase
 - [AngularFire CodeLab]([url](https://firebase.google.com/codelabs/firebase-web#0)): This is using Angular rather than React but you can get some basic ideas of how to call into Firebase from JavaScript
-

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import { 
-  Box, 
-  Button, 
-  Flex, 
+import {
+  Box,
+  Button,
+  Flex,
   Heading,
   FormControl,
   FormLabel,
-  Input
- } from '@chakra-ui/react';
-import { Form, useNavigate } from 'react-router-dom';
+  Input,
+  Image
+} from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import { doesGameExist, getGameByRoomKey, updateGame } from '../../firebase/database';
 import { useParams } from 'react-router-dom';
-import { ErrorModal } from '../../components/ErrorModal';
 
 import { v4 as uuidv4 } from 'uuid';
-import { set } from '@firebase/database';
 
 const HostInputInfoPage = () => {
   const { roomID } = useParams();
@@ -67,6 +66,9 @@ const HostInputInfoPage = () => {
   return (
     <div>
       <Flex direction="column" align="center" justify="center" h="100vh">
+      <Flex justify="space-between" alignItems="center" mb={5}>
+      <Image src="/logo.png" alt="Mall Assassins Logo" boxSize="50px" objectFit="contain" />
+    </Flex>
         <Heading as="h1" size="xl" mb={4}>
           Information
         </Heading>
